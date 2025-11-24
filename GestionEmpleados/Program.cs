@@ -8,7 +8,19 @@ var password = Console.ReadLine();
 if (auth.Authenticate(username, password))
 {
     Console.WriteLine("Autenticación exitosa. Bienvenido al sistema de gestión de empleados.");
-    // Aquí iría la lógica principal del sistema de gestión de empleados
+    var services = new EmpleadosServices();
+    Console.WriteLine("Agregar un nuevo empleado:");
+
+    Console.WriteLine("Nombre:");
+    var nombre = Console.ReadLine();
+
+    Console.WriteLine("Edad:");
+    var edad = int.Parse(Console.ReadLine());
+
+    Console.WriteLine("Puesto:");
+    var puesto = Console.ReadLine();
+    services.AgregarEmpleado(nombre, edad, puesto);
+    Console.WriteLine("Empleado agregado exitosamente.");
 }
 else
 {
