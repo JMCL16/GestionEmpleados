@@ -24,5 +24,14 @@ namespace GestionEmpleados.Services
             empleados.Add(empleado);
         }
 
+        public List<Empleados> ObtenerEmpleados()
+        {
+            return empleados;
+        }
+
+        public Empleados ObtenerEmpleadoPorId(int id)
+        {
+            return empleados.FirstOrDefault(e => e.Id == id);
+        }
     }
 }
