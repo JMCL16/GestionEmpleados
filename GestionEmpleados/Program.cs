@@ -21,6 +21,12 @@ if (auth.Authenticate(username, password))
     var puesto = Console.ReadLine();
     services.AgregarEmpleado(nombre, edad, puesto);
     Console.WriteLine("Empleado agregado exitosamente.");
+
+    Console.WriteLine("Lista de empleados:");
+    foreach (var emp in services.ObtenerEmpleados())
+    {
+        Console.WriteLine($"{emp.Id} - {emp.Nombre} ({emp.Puesto})");
+    }
 }
 else
 {
