@@ -50,6 +50,12 @@ if (auth.Authenticate(username, password))
     services.ActualizarEmpleado(empleados);
     Console.WriteLine("Empleado actualizado exitosamente.");
 
+    Console.WriteLine("Eliminar un empleado:");
+    Console.WriteLine("Ingrese el ID del empleado a eliminar:");
+    var idEliminar = int.Parse(Console.ReadLine());
+    services.EliminarEmpleado(idEliminar);
+    Console.WriteLine("Empleado eliminado exitosamente.");
+
 }
 else
 {
