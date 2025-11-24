@@ -33,5 +33,16 @@ namespace GestionEmpleados.Services
         {
             return empleados.FirstOrDefault(e => e.Id == id);
         }
+
+        public void ActualizarEmpleado(Empleados empleadosActualizado)
+        {
+            var empleado = ObtenerEmpleadoPorId(empleadosActualizado.Id);
+            if (empleado != null)
+            {
+                empleado.Nombre = empleadosActualizado.Nombre;
+                empleado.Edad = empleadosActualizado.Edad;
+                empleado.Puesto = empleadosActualizado.Puesto;
+            }
+        }
     }
 }
