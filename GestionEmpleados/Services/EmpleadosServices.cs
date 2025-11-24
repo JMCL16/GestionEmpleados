@@ -44,5 +44,14 @@ namespace GestionEmpleados.Services
                 empleado.Puesto = empleadosActualizado.Puesto;
             }
         }
+
+        public void EliminarEmpleado(int id)
+        {
+            var empleado = ObtenerEmpleadoPorId(id);
+            if (empleado != null)
+            {
+                empleados.Remove(empleado);
+            }
+        }
     }
 }
